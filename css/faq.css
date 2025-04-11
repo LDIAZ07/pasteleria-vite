@@ -1,47 +1,58 @@
-* {
-    font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-.titulo {
-    margin: 40px;
-    text-align: center;
-    font-size: 2.5vw;
-}
-
-.container {
-    margin: 0 auto;
-    padding: 20px;
-    width: fit-content;
+body {
+    background-color: #E88B93;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-
-}
-
-.item {
-    position: relative;
-    margin: 15px 0;
-    background-color: rgb(204, 204, 204);
-    width: fit-content;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .titulo h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    background-color: #f4858e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.25);
+    width: 80%;
     max-width: 600px;
+  }
+  
+  .item {
+    border-bottom: 1px solid rgb(249, 115, 115);
     padding: 15px;
-    border-radius: 15px;
-    transition: 0.5s;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-}
-
-.item:hover {
-    transform: translateX(-5%);
-    -webkit-transform: translateX(-5%);
-    -moz-transform: translateX(-5%);
-    -ms-transform: translateX(-5%);
-    -o-transform: translateX(-5%);
-}
+  }
+  
+  .item:last-child {
+    border-bottom: none;
+  }
+  
+  .item b {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  
+  .item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+  }
+  
+  .item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
