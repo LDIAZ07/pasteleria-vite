@@ -19,7 +19,7 @@ export const getPageContext = (pagePath) => {
             pageVariables = { galeria };
             break;
         case '/faq.html':
-            pageVariables = { faqs }; // 👈 Añadido para la página de preguntas frecuentes
+            pageVariables = { faqs }; 
             break;
     }
 
