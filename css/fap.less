@@ -1,69 +1,117 @@
 
+
+
+// Estilos para el título
 .titulo {
-    text-align: center;
-    padding: 40px 20px 10px;
-    background: @background-color;
-    box-shadow: 0 4px 12px @shadow-color-light;
-
-    h1 {
-        font-family: 'Cinzel', serif;
-        font-size: 3rem;
-        color: @title-color;
-        letter-spacing: 2px;
-        margin: 0;
-    }
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
+.titulo h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  position: relative;
+  background: linear-gradient(135deg, @primary-color, @accent-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.titulo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, @primary-color, @accent-color);
+  border-radius: 10px;
+}
+
+// Estilos para el contenedor principal
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  gap: 1.5rem;
 }
 
+// Definición de la animación
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Estilos para los items
 .item {
-    background: @card-bg-color;
-    padding: 25px 30px;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px @shadow-color-light;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 25px @shadow-color-dark;
-    }
-
-    b {
-        display: block;
-        font-size: 1.2rem;
-        color: darken(@title-color, 10%);
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: @description-color;
-    }
+  background: @white;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px @shadow-color;
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
 }
 
-@media (max-width: 600px) {
-    .titulo h1 {
-        font-size: 2.2rem;
-    }
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, @primary-color, @accent-color);
+  border-radius: 4px;
+}
 
-    .item {
-        padding: 20px;
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px @shadow-color;
+}
 
-        b {
-            font-size: 1.1rem;
-        }
+.item b {
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
 
-        p {
-            font-size: 0.95rem;
-        }
-    }
+.item p {
+  line-height: 1.6;
+  color: @text-secondary;
+  margin-top: 0.75rem;
+}
+
+.item:focus-within {
+  outline: 2px solid @accent-color;
+}
+
+// Retrasos en las animaciones
+.item:nth-child(1) { animation-delay: 0.1s; }
+.item:nth-child(2) { animation-delay: 0.2s; }
+.item:nth-child(3) { animation-delay: 0.3s; }
+.item:nth-child(4) { animation-delay: 0.4s; }
+
+// Media queries para responsividad
+@media (max-width: 768px) {
+  .titulo h1 {
+    font-size: 2.5rem;
+  }
+  
+  .item {
+    padding: 1.25rem;
+  }
 }
